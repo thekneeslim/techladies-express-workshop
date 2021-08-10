@@ -5,4 +5,11 @@ export default class Book {
     this.publicationYear = publicationYear;
   }
 
+  title() {
+    return this.title;
+  }
+
+  publicationYear() {
+    return this.publicationYear;
+  }
 }
