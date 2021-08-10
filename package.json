@@ -1,10 +1,11 @@
 {
-  "name": "express-workshop",
+  "name": "techladies-express-workshop",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,8 @@
     "@babel/cli": "^7.14.8",
     "@babel/core": "^7.15.0",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
-    "@babel/preset-env": "^7.15.0"
+    "@babel/preset-env": "^7.15.0",
+    "jest": "^27.0.6"
   },
   "dependencies": {
     "express": "^4.17.1"
