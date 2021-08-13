@@ -21,7 +21,8 @@ export default class BookRepository {
 
   get(index) {
     if(!this.books.has(index)) { throw new Error(`Invalid input: Book of index ${index} is not found!`); }
-    return this.books.get(index);
+    const { title, publicationYear } = this.books.get(index);
+    return { index, title, publicationYear };
   }
 
   update(index, title, publicationYear) {

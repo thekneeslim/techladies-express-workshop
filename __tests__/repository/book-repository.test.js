@@ -30,7 +30,7 @@ describe("Book repository", () => {
       repository.add("Lord Of The Rings", 1954);
       repository.add("Harry Potter and the Chamber of Secrets", 1998);
 
-      expect(repository.get(2)).toEqual(new Book("Harry Potter and the Chamber of Secrets", 1998));
+      expect(repository.get(2)).toEqual({ index: 2, title: "Harry Potter and the Chamber of Secrets", publicationYear: 1998 });
     });
 
     it("should throw error if index is not found", () => {
@@ -43,7 +43,7 @@ describe("Book repository", () => {
       repository.add("Lord Of The Rings", 1954);
       repository.update(1, "Lord of the Flies", 1954);
 
-      expect(repository.get(1)).toEqual(new Book("Lord of the Flies", 1954));
+      expect(repository.get(1)).toEqual({ index: 1, title: "Lord of the Flies", publicationYear: 1954 });
     });
 
     it("should not increment index when book is updated", () => {
@@ -51,7 +51,7 @@ describe("Book repository", () => {
       repository.update(1, "Lord of the Flies", 1954);
       repository.add("The Chronicles of Narnia", 1956);
 
-      expect(repository.get(2)).toEqual(new Book("The Chronicles of Narnia", 1956));
+      expect(repository.get(2)).toEqual({ index: 2, title: "The Chronicles of Narnia", publicationYear: 1956 });
     });
 
     it("should throw error if publicationYear is not defined", () => {
