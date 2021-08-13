@@ -6,7 +6,7 @@ describe("Book repository", () => {
   let repository;
 
   beforeEach(() => {
-    repository = new BookRepository();
+    repository = new BookRepository(false);
   });
 
   describe("Add", () => {
@@ -80,5 +80,16 @@ describe("Book repository", () => {
     it("should throw error if book is not found", () => {
       expect(() => repository.delete(1)).toThrow("Invalid input: Book of index 1 is not found!");
     });
+  });
+
+  describe("GetAll", () => {
+    it("should return all books in the library", () => {
+      repository = new BookRepository();
+
+      const result = repository.getAll();
+      expect(result.length).toEqual(2);
+      expect(result[0]).toEqual({ index: 1, title: "Lord Of The Rings", publicationYear: 1954 });
+      expect(result[1]).toEqual({ index: 2, title: "Harry Potter and the Chamber of Secrets", publicationYear: 1998 });
+  })
   })
 });

@@ -1,10 +1,14 @@
-import Book from "../model/book";
+import Book from "../model/book.js";
 
 export default class BookRepository {
 
-  constructor() {
+  constructor(seed = true) {
     this.books = new Map();
     this.index = 0;
+    if(seed) {
+      [new Book("Lord Of The Rings", 1954), new Book("Harry Potter and the Chamber of Secrets", 1998)]
+        .forEach(book => this.add(book.title, book.publicationYear))
+    }
   }
 
   add(title, publicationYear) {
@@ -33,5 +37,13 @@ export default class BookRepository {
     if(!this.books.has(index)) { throw new Error(`Invalid input: Book of index ${index} is not found!`); }
 
     this.books.delete(index);
+  }
+
+  getAll() {
+    const catalogue = [];
+    for (const [key, value] of this.books.entries()) {
+      catalogue.push({index: key, title: value.title, publicationYear: value.publicationYear })
+    }
+    return catalogue;
   }
 }
