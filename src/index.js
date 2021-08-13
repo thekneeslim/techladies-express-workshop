@@ -19,9 +19,18 @@ app.get('/books', (req, res) => {
 
 app.post('/books', (req, res) => {
   const payload = req.body;
-  const index = booksRepository.add(payload.title, payload.publicationYear);
-  res.json(booksRepository.get(index));
+  try {
+    const index = booksRepository.add(payload.title, payload.publicationYear);
+    res.json(booksRepository.get(index));
+  } catch (e) {
+    const statusCode = getErrorStatusCode(e);
+    res.status(statusCode).json({ status: statusCode, error: e.message });
+  }
 });
+
+const getErrorStatusCode = (e) => {
+  return e.message.contains("Book of index") ? 404 : 400;
+};
 
 app.listen(port, () => {
   console.log(`Library Application listening at http://localhost:${port}`)
