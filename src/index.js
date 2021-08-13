@@ -4,6 +4,9 @@ import BookRepository from "./repository/book-repository.js";
 const app = express();
 const port = 3000;
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 const booksRepository = new BookRepository();
 
 app.get('/', (req, res) => {
@@ -12,6 +15,12 @@ app.get('/', (req, res) => {
 
 app.get('/books', (req, res) => {
   res.json(booksRepository.getAll());
+});
+
+app.post('/books', (req, res) => {
+  const payload = req.body;
+  const index = booksRepository.add(payload.title, payload.publicationYear);
+  res.json(booksRepository.get(index));
 });
 
 app.listen(port, () => {
