@@ -40,8 +40,19 @@ app.put('/books/:id', (req, res) => {
   }
 });
 
+app.delete('/books/:id', (req, res) => {
+  const index = parseInt(req.params.id);
+  try {
+    booksRepository.delete(index);
+    res.status(204).send();
+  } catch (e) {
+    const statusCode = getErrorStatusCode(e);
+    res.status(statusCode).json({ status: statusCode, error: e.message });
+  }
+});
+
 const getErrorStatusCode = (e) => {
-  return e.message.contains("Book of index") ? 404 : 400;
+  return e.message.includes("Book of index") ? 404 : 400;
 };
 
 app.listen(port, () => {
