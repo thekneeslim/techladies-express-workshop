@@ -1,45 +1,22 @@
-1. Main branch
-    * Boilerplate project 
-        * No routes exposed
-        * Dependencies in `package.json`
-        * In memory repository (no DB for this workshop)
-    * Workshop
-        * What is a server
-        * What is APIs + brief history
-        * Express
-        * RESTful routing
-        * CRUD requests
-        * Project Setup
-            * Dependencies
-            * Middleware
-        * Implementing in Express
-        * Nice to have:
-            * Code organization
-            * Illustration of how React + Express integration
-            * Tests
-1. Suggested Approach Branch
-      
-1. Prework
-    * Series of `cards/tasks` to implement during the workshop
-    * Implementation of the cards
-    * Suggested approach to implementing cards
-    
-KIV:
-    * Mac/Linux VS Window setup script
-    * Clone repo locally
+# Workshop Plan
 
 1. Introductions + Plan for the workshop                ( 05 mins )
-1. Theory                                               ( 30 mins )
-    * Server, express, RESTful routing, CRUD
-1. Hands-on                                             ( 90 mins )
-    * Server setup                      ( 10 mins )
-    * GET                               ( 10 mins )
-    * CREATE                            ( 15 mins )
-    * UPDATE                            ( 10 mins )
-    * DELETE                            ( 10 mins )
-1. Extension (nice to have)                             ( 15 mins )
-1. Q&A                                                  ( 15 mins )
+1. Theory                                               ( 10 mins )
+1. Hands-on                                             ( 120 mins )
+    * Server setup                      ( 5 + 5 mins )              10
+    * GET                               ( 10 + 10 mins )            20
+    * CREATE                            ( 15 + 10 mins )            25
+    * UPDATE                            ( 10 + 10 mins )            20
+    * DELETE                            ( 10 + 10 mins )            20            
+    * try-catch                         ( 10 mins )                 10
+    * Refactoring (routing)             ( 10 mins )                 10
+    * Buffer                            ( 5 mins )                  05
+1. Consolidation + Q&A                                  ( 15 mins )
 
 Requirements:
-- Node (CHECK VERSION)
-- Postman
+* git
+* node & npm
+* Postman
+    
+KIV:
+    * Clone repo locally
