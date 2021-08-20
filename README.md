@@ -33,11 +33,15 @@ Tech Stack:
 express-workshop
 |_ node_modules/                # Application dependencies
 |_ scripts/                     # Utility scripts
+|_ requirements                 # Workshop tasks
 |_ src/                         # Source code
 |_ __tests__/                   # Tests
+|_ postman/                     # Postman configuration
 |_ package.json                 # Project properties & minimum dependencies' version
 |_ package-lock.json            # Describes exact dependency tree generated
 |_ .babelrc
 |_ .gitignore
+|_ Plan.md
+|_ README.md
 ```
     
