@@ -9,3 +9,4 @@ echo "Node Version: $(node -v)"
 printf '\n\360\237\246\204\t Setting up dependencies...\n'
 pushd ${BASEDIR}/..
 npm i
+popd
